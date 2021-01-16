@@ -25,7 +25,37 @@ urlModel.create = function (url) {
 
         resolve(
             {
-                "urlshort": config.domain + "/" + id
+                "urlshort": config.domain + id
+            });
+
+        return;
+    });
+
+}
+
+
+urlModel.create = function (url) {
+
+    console.log("[Model] Create Method");
+
+    return new Promise(async (resolve, reject) => {
+
+        var id = '';
+        for (var i = 0; i < config.id_length; i++) {
+            id += config.alphabet.charAt(Math.floor(Math.random() * config.alphabet.length));
+        }
+
+        operations.insert('acortadorurl', 'url', {
+            'url': url,
+            'urlshort': id,
+            'numberOfConsult': 0
+        }).then(function (value) {
+
+        });
+
+        resolve(
+            {
+                "urlshort": config.domain + id
             });
 
         return;
@@ -35,24 +65,31 @@ urlModel.create = function (url) {
 
 urlModel.delete = function (shorturl) {
 
-    /*console.log("[Model] Delete Method");
+    console.log("[Model] Delete Method");
 
     return new Promise(async (resolve, reject) => {
 
-        const myURL = url.parse(shorturl);
+        const pasedshorturl = url.parse(shorturl);
 
         operations.delete('acortadorurl', 'url', {
-            'urlshort': id
+            'urlshort': pasedshorturl.path.replace('/', '')
         }).then(function (value) {
-            resolve(
-                {
-                    "Resultado": "Borrado exitoso"
-                });
+            if (value.deletedCount > 0) {
+                resolve(
+                    {
+                        "Resultado": "Borrado exitoso"
+                    });
+            } else {
+                resolve(
+                    {
+                        "Resultado": "No Existe URL"
+                    });
+            }
         });
 
         return;
     });
-    */
+
 }
 
 urlModel.start = function (shorturl) {
@@ -61,12 +98,17 @@ urlModel.start = function (shorturl) {
 
         console.log("[Model] Start Method");
 
-        await operations.find('acortadorurl', 'url', { "urlshort": shorturl }).then(function (value) {
+        await operations.find('acortadorurl', 'url', { "urlshort": shorturl.replace('/', '') }).then(function (value) {
             if (value.length > 0) {
                 resolve(
                     {
                         "url": value[0].url
                     });
+
+                operations.update('acortadorurl', 'url', { "urlshort": shorturl.replace('/', '') }, { $inc: { "numberOfConsult": 1 } }).then(function (value) {
+
+                });
+
             } else {
                 resolve(
                     {
@@ -74,8 +116,6 @@ urlModel.start = function (shorturl) {
                     });
             }
         });
-
-        console.log("Actualizo contador");
         return;
     });
 

@@ -46,7 +46,7 @@ urlCtrl.start = async function (req, res) {
 
     console.log("[Controller] Start Method");
 
-    var url = await urlModel.start("AAAAAA");
+    var url = await urlModel.start(req.url);
 
     res.redirect(url.url);
 

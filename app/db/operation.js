@@ -53,3 +53,21 @@ exports.delete = function (dbName, collectionName, query) {
         });
     });
 };
+
+/**
+  * initializationRoutes
+  * @param {*} dbName 
+  * @param {*} collectionName
+  * @param {*} query
+  * Metodo que realiza la actualización de una query especifica
+**/
+exports.update = function (dbName, collectionName, filter, update) {
+    return new Promise((resolve, reject) => {
+        return db.getConnection().db(dbName).collection(collectionName).updateOne(filter, update, function (err, result) {
+            if (err) {
+                reject(err);
+            }
+            resolve(result);
+        });
+    });
+};
