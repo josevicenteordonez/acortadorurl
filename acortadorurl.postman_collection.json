@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "238fcd39-421f-45ab-a6a9-339a01758585",
+		"name": "acortadorurl",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "local",
+			"item": [
+				{
+					"name": "Crear URL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\" : \"https://www.google.com/\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/url",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar URL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\" : \"https://www.google.com/\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/consult",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consult"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar URL",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\" : \"http://jvurl.me/NSLEOZ\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/url",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estadisticas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stats",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "gcp",
+			"item": [
+				{
+					"name": "Crear URL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\" : \"https://www.google.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://jvurl.me/url",
+							"protocol": "http",
+							"host": [
+								"jvurl",
+								"me"
+							],
+							"path": [
+								"url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar URL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\" : \"http://jvurl.me/BRRIRF\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://jvurl.me/consult",
+							"protocol": "http",
+							"host": [
+								"jvurl",
+								"me"
+							],
+							"path": [
+								"consult"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar URL",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\" : \"http://jvurl.me/BRRIRF\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://jvurl.me/url",
+							"protocol": "http",
+							"host": [
+								"jvurl",
+								"me"
+							],
+							"path": [
+								"url"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estadisticas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://jvurl.me/stats",
+							"protocol": "http",
+							"host": [
+								"jvurl",
+								"me"
+							],
+							"path": [
+								"stats"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
