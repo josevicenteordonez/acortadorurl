@@ -4,14 +4,24 @@ const urlModel = require('../model/url');
 const urlCtrl = {};
 
 urlCtrl.stats = async function (req, res) {
-    console.log("stats");
-    res.status(200).json("stats");
+    console.log("[Controller] Stats Method");
+    
+    var urlStats = await urlModel.stats();
+
+    res.status(200).json(urlStats);
 };
 
 urlCtrl.consult = async function (req, res) {
 
-    console.log("consult");
-    res.status(200).json("consult");
+    console.log("[Controller] Consult Method");
+    
+    var url = await urlModel.consult(req.body.url);
+
+    if (url) {
+        res.status(200).json(url);
+    } else {
+        res.status(403).json("403");
+    }
 
 };
 
@@ -51,12 +61,5 @@ urlCtrl.start = async function (req, res) {
     res.redirect(url.url);
 
 };
-
-
-
-
-
-
-
 
 module.exports = urlCtrl;

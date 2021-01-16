@@ -10,7 +10,7 @@ exports.initializationRoutes = function (app) {
         urlCtrl.stats(req, res);
     });
 
-    app.get('/url', (req, res, next) => {
+    app.post('/consult', (req, res, next) => {
         urlCtrl.consult(req, res);
     });
 

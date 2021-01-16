@@ -4,35 +4,65 @@ const url = require('url');
 
 var urlModel = {};
 
-urlModel.create = function (url) {
+urlModel.stats = function (url) {
 
-    console.log("[Model] Create Method");
+    console.log("[Model] Stats Method");
 
     return new Promise(async (resolve, reject) => {
 
-        var id = '';
-        for (var i = 0; i < config.id_length; i++) {
-            id += config.alphabet.charAt(Math.floor(Math.random() * config.alphabet.length));
-        }
-
-        operations.insert('acortadorurl', 'url', {
-            'url': url,
-            'urlshort': id,
-            'numberOfConsult': 0
-        }).then(function (value) {
-
+        await operations.find('acortadorurl', 'url', {}).then(function (value) {
+            resolve(
+                value
+            );
         });
-
-        resolve(
-            {
-                "urlshort": config.domain + id
-            });
 
         return;
     });
 
 }
 
+urlModel.consult = function (urlReq) {
+
+    console.log("[Model] consult Method");
+
+    return new Promise(async (resolve, reject) => {
+
+        const pasedurl = url.parse(urlReq);
+
+        if (pasedurl.host == config.domainHost) {
+            await operations.find('acortadorurl', 'url', { "urlshort": pasedurl.path.replace('/', '') }).then(function (value) {
+                if (value.length > 0) {
+                    resolve(
+                        {
+                            "url": value[0].url
+                        });
+                } else {
+                    resolve(
+                        {
+                            "url": "No existe"
+                        });
+                }
+            });
+        } else {
+            await operations.find('acortadorurl', 'url', { "url": urlReq }).then(function (value) {
+                if (value.length > 0) {
+                    resolve(
+                        {
+                            "urlshort": value[0].urlshortComplete
+                        });
+                } else {
+                    resolve(
+                        {
+                            "url": "No existe"
+                        });
+                }
+            });
+        }
+
+        return;
+    });
+
+}
 
 urlModel.create = function (url) {
 
@@ -48,6 +78,7 @@ urlModel.create = function (url) {
         operations.insert('acortadorurl', 'url', {
             'url': url,
             'urlshort': id,
+            'urlshortComplete': config.domain + id,
             'numberOfConsult': 0
         }).then(function (value) {
 
