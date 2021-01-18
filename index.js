@@ -21,9 +21,10 @@ db.openConnection();
 
 app.use(bodyParser.json());
 
-app.listen(PORT, () => {
+var server = app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+server.setTimeout(5000);
 
 /**
  * Se inicializan las rutas que soportara el servicio
