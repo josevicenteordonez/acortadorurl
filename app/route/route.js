@@ -21,13 +21,22 @@ exports.initializationRoutes = function (app) {
             urlCtrl.consult(req, res);
         });
 
-        app.get('/([A-Z]{6})', (req, res, next) => {
+        app.get('/([A-Za-z0-9]{6})', (req, res, next) => {
             urlCtrl.start(req, res);
         });
 
         app.get('/stats', (req, res, next) => {
             urlCtrl.stats(req, res);
         });
+
+        app.get('/', (req, res, next) => {
+            res.status(200).send("Bienvenido al acortador de URL - Jv");
+        });
+
+        app.get('*',function (req, res) {
+            res.redirect('/');
+        });
+
     } catch (error) {
         console.info("[Routes] Exception");
         console.error(error);
