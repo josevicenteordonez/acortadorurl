@@ -72,7 +72,7 @@ urlCtrl.stats = async function (req, res) {
     try {
         console.log("[Controller] Stats Method");
         var urlStats = await urlModel.stats();
-        if (url) {
+        if (urlStats) {
             res.status(200).json(urlStats);
         } else {
             res.status(403).json("403");

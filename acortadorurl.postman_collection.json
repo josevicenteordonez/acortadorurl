@@ -42,7 +42,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\" : \"https://www.google.com/\"\n}",
+							"raw": "{\n    \"url\" : \"https://www.jvurl.me/HqWKgi\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -69,7 +69,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\" : \"http://jvurl.me/NSLEOZ\"\n}",
+							"raw": "{\n    \"url\" : \"https://www.jvurl.me/HqWKgi\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -119,7 +119,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\" : \"https://www.google.com\"\n}",
+							"raw": "{\n    \"url\" : \"https://www.elinformadorchile.cl/2021/01/13/noticias-chile-pdi-mata-a-delincuente-que-intento-atropellar-a-funcionarios-en-control-toda-la-banda-eran-venezolanos/?fbclid=IwAR1P8JIhIWjJbU80n9gNAlD5WC0zpaBlhOZcnW8MdoMHeF19gAu-xZtl4Aw\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -127,9 +127,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://jvurl.me/url",
-							"protocol": "http",
+							"raw": "https://www.jvurl.me/url",
+							"protocol": "https",
 							"host": [
+								"www",
 								"jvurl",
 								"me"
 							],
@@ -147,7 +148,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\" : \"http://jvurl.me/BRRIRF\"\n}",
+							"raw": "{\n    \"url\" : \"https://www.jvurl.me/bPngZY\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -155,9 +156,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://jvurl.me/consult",
-							"protocol": "http",
+							"raw": "https://www.jvurl.me/consult",
+							"protocol": "https",
 							"host": [
+								"www",
 								"jvurl",
 								"me"
 							],
@@ -175,7 +177,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"url\" : \"http://jvurl.me/BRRIRF\"\n}",
+							"raw": "{\n    \"url\" : \"https://www.jvurl.me/6e5gp9\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -183,9 +185,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://jvurl.me/url",
-							"protocol": "http",
+							"raw": "https://www.jvurl.me/url",
+							"protocol": "https",
 							"host": [
+								"www",
 								"jvurl",
 								"me"
 							],
@@ -202,9 +205,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://jvurl.me/stats",
-							"protocol": "http",
+							"raw": "https://www.jvurl.me/stats",
+							"protocol": "https",
 							"host": [
+								"www",
 								"jvurl",
 								"me"
 							],

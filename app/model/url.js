@@ -138,7 +138,7 @@ urlModel.start = function (shorturl) {
     }
 }
 
-urlModel.stats = function (url) {
+urlModel.stats = function () {
     try {
         console.info("[Model] Stats Method");
         return new Promise(async (resolve, reject) => {
